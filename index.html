@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="adursearch">
+
+    
+    <title>Buscador Audrey</title>
+
+    <link rel="apple-touch-icon" href="icono-192.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body class="pantalla-inicio-activa">
+
+    <div class="contenedorOla olaSuperior">
+        <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path class="wave-path" d="M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 L1000,0 L0,0 Z" opacity="0.5"></path>
+            <path class="wave-path" d="M0,60 C200,10 400,90 600,40 C800,10 900,80 1000,30 L1000,0 L0,0 Z"></path>
+        </svg>
+    </div>
+
+    <div class="contenedorOla olaInferior">
+        <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path class="wave-path" d="M0,50 C150,0 350,100 500,50 C650,0 850,100 1000,50 L1000,100 L0,100 Z" opacity="0.6"></path>
+            <path class="wave-path" d="M0,40 C200,90 400,10 600,60 C800,90 900,20 1000,70 L1000,100 L0,100 Z"></path>
+        </svg>
+    </div>
+
+    <nav class="nav-superior">
+        <div class="logo-mini" onclick="alternarBusqueda('pantalla-resultados')">
+            <svg width="350" height="50" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                <linearGradient id="gradConvergencia2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#007aff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#5ac8fa;stop-opacity:1" />
+                </linearGradient>
+                </defs>
+
+                <g transform="translate(10, 10)">
+                <path d="M10 60 L30 20 L50 60" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <path d="M18 42 L42 42" stroke="url(#gradConvergencia2)" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+                <circle cx="30" cy="48" r="3" fill="url(#gradConvergencia2)"/>
+
+                <circle cx="30" cy="20" r="12" stroke="url(#gradConvergencia2)" stroke-width="2.5" fill="none"/>
+                </g>
+                
+                <text x="75" y="68" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="60" font-weight="900" letter-spacing="-1.5px" fill="white">
+                adur<tspan font-weight="200" opacity="0.7">search</tspan>
+                </text>
+            </svg>
+        </div>
+        <div class="iconos-derecha">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="4" height="4"/><rect x="11" y="4" width="4" height="4"/><rect x="18" y="4" width="4" height="4"/><rect x="4" y="11" width="4" height="4"/><rect x="11" y="11" width="4" height="4"/><rect x="18" y="11" width="4" height="4"/><rect x="4" y="18" width="4" height="4"/><rect x="11" y="18" width="4" height="4"/><rect x="18" y="18" width="4" height="4"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </div>
+    </nav>
+
+    <div id="pantalla-inicio" class="pantalla activa">
+        <header>
+            <svg width="550" height="80" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                <linearGradient id="gradConvergencia" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#007aff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#5ac8fa;stop-opacity:1" />
+                </linearGradient>
+                </defs>
+
+                <g transform="translate(10, 10)">
+                <path d="M10 60 L30 20 L50 60" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <path d="M18 42 L42 42" stroke="url(#gradConvergencia)" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+                <circle cx="30" cy="48" r="3" fill="url(#gradConvergencia)"/>
+
+                <circle cx="30" cy="20" r="12" stroke="url(#gradConvergencia)" stroke-width="2.5" fill="none"/>
+                </g>
+
+                <text x="75" y="68" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="60" font-weight="900" letter-spacing="-1.5px" fill="white">
+                adur<tspan font-weight="200" opacity="0.7">search</tspan>
+                </text>
+            </svg>
+
+            <h2>El buscador más seguro y privado</h2>
+            
+            <div class="iconosBusqueda">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="8" y1="9" x2="14" y2="9" stroke-width="1.5" opacity="0.7"></line>
+                <line x1="8" y1="13" x2="12" y2="13" stroke-width="1.5" opacity="0.7"></line>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="seleccionado">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path>
+                <line x1="6" y1="8" x2="18" y2="8" stroke-width="2.5"></line>
+                <line x1="6" y1="12" x2="18" y2="12"></line>
+                <line x1="6" y1="16" x2="12" y2="16"></line>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                <line x1="10" y1="6" x2="16" y2="6" stroke-width="1.5" opacity="0.8"></line>
+                <line x1="10" y1="10" x2="16" y2="10" stroke-width="1.5" opacity="0.8"></line>
+                <line x1="10" y1="14" x2="14" y2="14" stroke-width="1.5" opacity="0.8"></line>
+                </svg>
+
+            </div>
+            
+            <div class="barraBuscar">
+                <button class="btn-lupa" onclick="alternarBusqueda('pantalla-inicio')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <input type="search" id="input-inicio" placeholder="¿Qué quieres buscar hoy?" onkeypress="siPulsaEnter(event)"
+                    autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+            </div>
+        </header>
+        <footer>
+            <p>Informar de un problema</p>
+            <p>Ayuda</p>
+            <p>Condiciones</p>
+            <p>Configurar la privacidad</p>
+            <p>Ajustes</p>
+        </footer>
+    </div>
+
+    <div id="pantalla-resultados" class="pantalla">
+        <header>
+            <div class="barraBuscar">
+                <button class="btn-lupa" onclick="alternarBusqueda('pantalla-resultados')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <input type="search" id="input-resultados" placeholder="Buscar..." onkeypress="siPulsaEnter(event)" autocomplete="off"
+                    autocorrect="off" autocapitalize="off" spellcheck="false">
+            </div>
+            <div class="secciones">
+                <h4>Todos</h4>
+                <h4><span>Imágenes</span></h4>
+                <h4>Vídeos</h4>
+                <h4>Noticias</h4>
+                <h4>Mapas</h4>
+                <h4>Libros</h4>
+            </div>
+        </header>
+
+        <main>
+            <div class="contenedorFotos">
+                <img class="foto" src="img/01.jpg" alt="Audrey Hepburn">
+                <p>Audrey Hepburn - L...</p>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/AudreyKHepburn.jpg/250px-AudreyKHepburn.jpg" alt="favicon">
+                    <h2>Wikipedia.com</h2>
+                </div>
+            </div>
+            <div class="contenedorFotos">
+                <img class="foto" src="img/02.jpg" alt="Audrey Hepburn set">
+                <p>Audrey Hepburn sonriendo en el set de ...</p>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/AudreyKHepburn.jpg/250px-AudreyKHepburn.jpg" alt="favicon">
+                    <h2>Curiosidades.com</h2>
+                </div>
+                <div class="contenedorFotos">
+                    <img class="foto" src="img/03.jpg" alt="Audrey Hepburn set">
+                    <p>Audrey Hepburn sonriendo en el set de ...</p>
+                    <div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/AudreyKHepburn.jpg/250px-AudreyKHepburn.jpg" alt="favicon">
+                        <h2>Curiosidades.com</h2>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Anterior</p>
+            <p class="pagina-activa" style="color: var(--colorTexto); font-weight: bold; border-bottom: 1px solid var(--colorTexto);">1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>Siguiente</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('SW activo', reg))
+            .catch(err => console.log('Error SW', err));
+        });
+      }
+    </script>
+
+</body>
+</html>
