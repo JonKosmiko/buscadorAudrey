@@ -66,11 +66,6 @@ inputs.forEach(input => {
         if (indexLetra < fraseMagica.length) {
             this.value += fraseMagica[indexLetra];
             indexLetra++;
-
-            // Auto-búsqueda al terminar la frase
-            if (indexLetra === fraseMagica.length) {
-                siPulsaEnter({ key: "Enter", target: this });
-            }
         }
     });
 });
