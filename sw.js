@@ -1,4 +1,4 @@
-const CACHE_NAME = 'buscadorAudrey_v10';
+const CACHE_NAME = 'buscadorAudrey_v10.1';
 const ASSETS = [
   './',
   './index.html',
